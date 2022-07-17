@@ -1,0 +1,11 @@
+variables &costants / functions & methods: nounes or short phrases with adjectives
+    ex: userData, isValid()
+classes: nouns or short phrases with nouns:
+    ex: class RequestBody
+
+name casing: snake_case, camelCase, pascalCase, kaba-case
+
+be consistent:
+    getUsers, fetchUsers, retreiveUsers are all okay, but be consistent
+
+in the tutorial he changed area method to getArea method, he wouldn't have changed it if it is a boolean or getter
