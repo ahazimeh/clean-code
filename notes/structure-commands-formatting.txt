@@ -1,0 +1,27 @@
+types of bad comments:
+    Redundant: when the name of the fn for example already explains what is happening
+    Dividers/Block Markers: ex //classes when it is also obvious
+    Misleading: ex: comments that contradict with the method name
+    Commented Out Code: we are using git so we can just get rid of it
+Good Comments:
+    Legal Information
+    Explanation Which can't be replaced by good naming
+    Warnings
+    Todo Note: ex // needs to be implemented
+    
+    Documentation Strings
+
+Code Formatting:
+    Verticle Formatting
+    Horizontal Formatting
+    Verticle Formatting:
+        should be easy to read
+        too big file: consider splitting it
+        having blank lines to make code more readable
+        related concepts should be close to each others when possible (methods that are calling each others for example)
+        ordering: depends on the style guide of the language, example adding private methods before pulic or vice versa
+    Horizontal Formatting
+        avoid long unreadable lines
+        use indentation
+        split long lines into shorter multiple lines
+        use clear but not long unreadable names
