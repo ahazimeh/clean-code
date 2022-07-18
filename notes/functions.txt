@@ -1,0 +1,13 @@
+minimize the number of parameters
+the less parameters the better
+functions with 3 parameters should be avoided if possible and with more than 3 should always be avoided
+example: rather than saveUser(email, password) you can make it such that it takes no arguments
+    user.save(); here you will have to initialize a user but it is expected to have multiple arguments in the constructor
+
+const user = new User({name: 'Max', email: 'max@test.com', age: 31}); //takes 1 parameter
+sumUp(1, -4, -15, 30) // this is a good function even though it could take as many parameters as we want
+
+output parameters:
+createIdUser(user) // this function adds id to the object user and these functions should be avoided
+renaming it to addId will make it more obvious, here we have an output parameter but at least it is more expected
+user.addId() will make it very obvious
