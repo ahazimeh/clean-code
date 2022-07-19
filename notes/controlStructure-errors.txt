@@ -1,0 +1,52 @@
+guards try to write the fail cases quickly:
+    if(error) return;
+it is easier to use positive checks such as using isEmpty rather than isNotEmpty function or hasNoElements function
+
+invert conditional checks
+    if(a) {
+        do x
+    }
+    if(b) {
+        do y
+    }
+    x() {
+        if(j) {
+            ///
+        }
+        if(k) {
+            ///
+        }
+        if(l) {
+            ///
+        }
+    }
+    y() {
+        if(j) {
+            ///
+        }
+        if(k) {
+            ///
+        }
+        if(l) {
+            ///
+        }
+    }
+    to invert the code then start with if(j) if(k) and if(l) and for each fn you will have 2 conditions to consider, in some cases this could be better
+
+Embrace Errors & Error Handling
+    if something is an error -> make it an error
+    /////// google how to build your own error class which extends the error class
+
+Error Handling is 1 thing, a function that contains error handling code should only handle the error and not have other code somewhere else outside try catch
+
+Factory and Polymorphism
+factory functon is fn which is used to product something, ex: object, maps, arrays
+
+////71 //to totally remove the duplication for invert conditional checks section video 71 is great
+he made a fn called:
+let processors = {
+    payment: null,
+    refund: null
+}
+and he wrote the logic to which functions payment and refund should point at
+so he removed the duplication and wrote the conditional checks in 1 place
