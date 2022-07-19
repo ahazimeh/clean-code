@@ -11,3 +11,34 @@ output parameters:
 createIdUser(user) // this function adds id to the object user and these functions should be avoided
 renaming it to addId will make it more obvious, here we have an output parameter but at least it is more expected
 user.addId() will make it very obvious
+
+functions should be really small, 
+write functions that do exactly 1 things
+    1 thing like: validating and saving user input
+
+
+Levels of abstraction
+isEmail is high level operation whereas email.includes("@") is low level
+Functions should do work that'is one level of abstraction below their name
+    ex: we could have a fn called emailIsValid and there we check for email validitiy
+    we don't do that on a fn called saveUser but we call emailIsValid fn
+mixing levels of abstraction in 1 fn is bad, like writting low level code to validate an email and then saving the user
+
+splitting a code:
+consider splitting your function if:
+    you have code that works together ex: user.setAge(), user.setName() to user.update()
+    extract code that requires more interpretation that the surrounding code, such as the code to check whether an email is valid
+51: demo is ammazing
+
+another reason to split your code is dry principle
+
+when not to split the code:
+    you are just renaming the operation
+    if you will need to scroll to find the code after splitting
+    if you have problems comming up with the name for the fn
+
+pure functions:
+    for specific input it will return same output
+    has no side effects: like starting a session which will have an impact on the whole system
+        showing a message to the user is a side effect
+side effects are bad if they are unexpected
