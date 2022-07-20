@@ -1,0 +1,32 @@
+///////80 to be reviewed
+/////// learn about polymorphism in classes
+
+polymorphism with classes:
+we have class Delivery
+protected property purchase
+2 methods called deliveryProduct and trackProduct with similar if conditions
+
+if(a)cond1/4
+if(b)cond2/5
+if(c)cond3/6
+we make 3 classes
+class1 extends Delivery{
+    deliveryProduct() {cond1}
+    trackProduct() {cond1}
+}.....
+to get back to the video.............
+
+
+
+
+clean classes should be small same as functions
+what small means, with functions we had the concept of fns doing 1 thing
+with classes there is a different concept, they should have signle responsibility
+
+product class should have the responsibility of product related issues
+
+Cohesion:
+how much are your class methods using the class properties
+maximum cohesion: all methods each use all class properties
+no cohesion is the oposite
+avoid using a class with no cohesion unless you want a data container with utitlity methods
