@@ -64,3 +64,27 @@ Single-Responsibility-Principle(SRP)
     because probably createPDF is a totally different feature than generateReport
     generate PDF is about the layout and how the pdf is presented
     where generateReport is technical, about pulling in data and connecting the right data
+Open-Closed-Principle(OCP)
+    A class should be open for extension but closed for modification
+    so if we have printPDF function in a class, we could have later on a printWordDocument
+    and later on other things
+    so we should have 1 interface and for each responsibility we make a new class and extend
+    this class from the printer interface
+Liskov Substitution Principle
+    Objects should be replaceable with instances of their subclasses without altering the behaviour.
+    ex: if we have bird and a fly method exists inside it
+    a child class called penguin extends the bird does not have similar behaviour when calling the fly method
+    and for that reason the bird class violates Liskov Substitution Principle
+The Interface Segregation Principle
+    Many Client-Specific interfaces are better than one general purpose interface
+    for example we can have a general database that have connect and storeData methods
+    but if we have an inMemoryDatabase extending Database interface then we don't need the connect method
+    so it is better to have for ex: Database and RemoteDatabase interfaces where
+    RemoteDatabase got connect method and Database got storeData method
+Dependency Inversion Principle(DIP)
+    You should depend upon abstraction, not concretion
+    if we have sqldatabase interface and database interface then we don't add in the constructor
+    the connecting to the database if the database type was an instance of sql database
+    the constructor should of a component should treat both any database the same and
+    it is the developer responsibility to make sure to connect to a database if
+    it is a remote database
