@@ -30,3 +30,37 @@ how much are your class methods using the class properties
 maximum cohesion: all methods each use all class properties
 no cohesion is the oposite
 avoid using a class with no cohesion unless you want a data container with utitlity methods
+
+Law Of Demeter:
+this.customer.lastPurchase.data;
+avoid code like this
+your class shouldn't rely too much on the internals of strangers, on other objects you
+    are interacting with in your code
+customer is a property in the class, accessing lastPurchase is fine, but lastPurchase is kind of stranger
+we shouldn't access lastPurchase because if something about the internal structure of lastPurchase changed
+all our code in this place where we have this line of code needs to change as well
+
+Law Of Demeter:
+Code in a method may only access direct internals (properties and methods) of:
+1: the object it belongs to
+2: objects that are stored in properties of the object
+3: objects that are received as method parameters
+4: objects which are created in the methods
+
+to follow the law of demeter we add a method such that we can write our code this way
+this.customer.getLastPurchaseDate()
+but in this way we could end up having a lot of methods in the customer class
+the better soln:
+    tell don't ask
+    so we use this.customer.lastPurchase and pass this to another method
+        and there we can access date property without violating the law of demeter
+        so rather than this.warehouse.deliverPurchaseByDate(this.customer, date)
+        use this: this.warehouse.deliverPurchase(this.customer.lastPurchase)
+
+Solid Principle:
+Single-Responsibility-Principle(SRP)
+    refers to different buisness areas this code might be related to
+    class contains 2 methods: generateReport and createPDF is probably violating SSP
+    because probably createPDF is a totally different feature than generateReport
+    generate PDF is about the layout and how the pdf is presented
+    where generateReport is technical, about pulling in data and connecting the right data
